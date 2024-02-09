@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 import Typewriter from "../utils/Typewriter";
-import ShareComponent from "../utils/ShareComponent";
 
 function Scary() {
   const [searchParams] = useSearchParams();
@@ -12,8 +11,6 @@ function Scary() {
   const [scared, setScared] = useState(0);
   const [progress, setProgress] = useState(0);
   const navi = useNavigate();
-  //   const { id } = useParams();
-  //   console.log(id);
   var counter = 0;
 
   function progress1() {
