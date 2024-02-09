@@ -68,7 +68,7 @@ function Scary() {
       ) : (
         <div className="flex justify-between">
           {scared > 0 ? <div className="m-2">Hehe</div> : null}
-          {scared > 1 ? <div className="m-2">Scared now?!?!</div> : null}
+          {scared > 1 ? <div className="m-2">Scared?</div> : null}
           {scared > 3 ? <div className="m-2">Hahahaha</div> : null}
           {scared > 5 ? <div className="m-2">OWNED 😜</div> : null}
         </div>
