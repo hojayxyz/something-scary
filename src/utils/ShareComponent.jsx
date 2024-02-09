@@ -21,7 +21,7 @@ import {
 
 function ShareComponent({ title, shareUrl, size }) {
   return (
-    <div className="flex flex-wrap space-x-3 m-3">
+    <div className="flex flex-wrap space-x-3 space-y-3 m-3">
       <TwitterShareButton url={shareUrl} title={title}>
         <XIcon size={size} round />
       </TwitterShareButton>
