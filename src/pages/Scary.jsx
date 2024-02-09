@@ -66,7 +66,7 @@ function Scary() {
       {scared === 0 && !isScarying ? (
         <div className="m-2 flex justify-center">Are you Ready?</div>
       ) : (
-        <div className="flex flex-col justify-between">
+        <div className="m-2 flex flex-col justify-between">
           {scared > 0 ? <div className="m-2">Hehe</div> : null}
           {scared > 1 ? <div className="m-2">Scared?</div> : null}
           {scared > 3 ? <div className="m-2">Hahahaha</div> : null}
