@@ -28,28 +28,9 @@ function ShareComponent({ title, shareUrl, size }) {
       <TelegramShareButton url={shareUrl} title={title}>
         <TelegramIcon size={size} round />
       </TelegramShareButton>
-      <FacebookMessengerShareButton url={shareUrl}>
-        <FacebookMessengerIcon size={size} round />
-      </FacebookMessengerShareButton>
       <FacebookShareButton url={shareUrl} quote={title}>
         <FacebookIcon size={size} round />
       </FacebookShareButton>
-      <WhatsappShareButton url={shareUrl} title={title}>
-        <WhatsappIcon size={size} round />
-      </WhatsappShareButton>
-      <RedditShareButton url={shareUrl} title={title}>
-        <RedditIcon size={size} round />
-      </RedditShareButton>
-      <LinkedinShareButton
-        url={shareUrl}
-        title={title}
-        summary="Something really scary is here..."
-      >
-        <LinkedinIcon size={size} round />
-      </LinkedinShareButton>
-      <LineShareButton url={shareUrl} title={title}>
-        <LineIcon size={size} round />
-      </LineShareButton>
       <EmailShareButton
         subject={title}
         body="Something really scary is here... "

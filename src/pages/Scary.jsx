@@ -66,58 +66,13 @@ function Scary() {
           "👻 Hacked 👻"
         )}
       </h1>
-      {isScarying === 0 ? (
-        <div>
-          <button
-            className="font-semibold"
-            onClick={() => {
-              scaryCounter(1);
-            }}
-          >
-            Make it scary
-          </button>
-        </div>
-      ) : isScarying === 1 ? (
-        <div>
-          <h2 className="text-xl text-red-500 m-3">{randomNumber * 2}</h2>
-          <h2 className="text-xl text-red-500 m-3">{randomNumber * 3}</h2>
-          <h2 className="text-xl text-red-500 m-3">{randomNumber * 4}</h2>
-          {/* <p className="text-stone-500">Watch the url 🙄</p> */}
-          <p className="m-2">{countdown}%</p>
-          <button className="m-2" onClick={() => setScared((z) => z + 1)}>
-            {scared === 0 ? "MAKE IT STOP" : null}
-            {scared === 1 ? "PLZ STOP IT" : null}
-            {scared === 2 ? "OH MY GOSH " : null}
-            {scared === 3 ? "HELP " : null}
-            {scared === 4 ? "HELP~~~" : null}
-            {scared === 5 ? "OWNED 😜" : null}
-            {scared === 6 ? "OWNED 😜😜" : null}
-            {scared === 7 ? "😜😜😜" : null}
-            {scared === 8 ? "😜😜😜😜😜" : null}
-            {scared === 9 ? "🤯🤯🤯" : null}
-            {scared >= 10 ? "🫠" : null}
-          </button>
-        </div>
-      ) : (
-        <div>
-          <button
-            className="font-semibold"
-            onClick={() => {
-              scaryCounter(1);
-              setCountdown(0);
-            }}
-          >
-            Retry?
-          </button>
-        </div>
-      )}
       {scared === 0 && isScarying === 0 ? (
         <div className="m-3 flex justify-center text-sm">
           Click when you are ready
         </div>
       ) : (
-        <div className="m-2 flex flex-col justify-between">
-          {scared >= 10 || isScarying === 3 ? (
+        <div className="m-3">
+          {isScarying === 3 ? (
             <div>
               <p className="text-sm">
                 Relax
@@ -127,22 +82,62 @@ function Scary() {
           ) : null}
         </div>
       )}
+      {isScarying !== 0 ? (
+        <div>
+          <h2 className="text-xl text-red-500 m-3">{randomNumber * 2}</h2>
+          <h2 className="text-xl text-red-500 m-3">{randomNumber * 3}</h2>
+          <h2 className="text-xl text-red-500 m-3">{randomNumber * 4}</h2>
+          {/* <p className="text-stone-500">Watch the url 🙄</p> */}
+          <p className="m-2">{countdown}%</p>
+        </div>
+      ) : null}
+      <div className="m-3">
+        {isScarying === 0 ? (
+          <button
+            className="font-semibold"
+            onClick={() => {
+              scaryCounter(1);
+            }}
+          >
+            Make it scary
+          </button>
+        ) : isScarying === 1 ? (
+          <button
+            disabled={scared >= 10}
+            onClick={() => setScared((z) => z + 1)}
+          >
+            {scared === 0 ? "MAKE IT STOP" : null}
+            {scared === 1 ? "PLZ STOP IT" : null}
+            {scared === 2 ? "OH MY GOSH " : null}
+            {scared === 3 ? "HELP " : null}
+            {scared === 4 ? "HELP~~~" : null}
+            {scared === 5 ? "OWNED 😜" : null}
+            {scared === 6 ? "OWNED 😜😜" : null}
+            {scared === 7 ? "😜 😜 😜" : null}
+            {scared === 8 ? "😱 😱 😱" : null}
+            {scared === 9 ? "🤯 🤯 🤯" : null}
+            {scared >= 10 ? "🫠 🫠 🫠" : null}
+          </button>
+        ) : (
+          <button
+            className="font-semibold"
+            onClick={() => {
+              scaryCounter(1);
+              setCountdown(0);
+            }}
+          >
+            Retry?
+          </button>
+        )}
+      </div>
       {isScarying === 3 ? (
         <div className="flex flex-wrap items-center mt-10 space-x-5 justify-center">
           <div className="text-white text-sm opacity-80 m-3">
-            Was this fun for you?
-            <br />
+            <p>Was this fun for you?</p>
             <Typewriter
               text="Share with your frenz"
               delay={100}
               infinite={false}
-            />
-          </div>
-          <div>
-            <ShareComponent
-              title="Can you handle this?"
-              shareUrl="https://scary.today"
-              size="32"
             />
           </div>
         </div>
