@@ -48,12 +48,12 @@ function Scary() {
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
       />
-      <h2 className="m-5 text-5xl">
+      <h1 className="m-5">
         {isScarying ? "Hacking...👻" : "Want something scary?"}
-      </h2>
+      </h1>
       {isScarying ? (
         <div>
-          <h2 className="text-5xl text-red-500 m-5">{randomNumber}</h2>
+          <h2 className="text-xl text-red-500 m-5">{randomNumber}</h2>
           <p className="text-stone-500">Watch the url 🙄</p>
           <p className="m-2">{countdown}%</p>
           <button className="m-2" onClick={() => setScared((z) => z + 1)}>
